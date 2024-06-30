@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+{% block exam_grade %}
+    <div class="dashboard-content-one">
+        <!-- Breadcrumbs Area Start Here -->
+        <div class="breadcrumbs-area">
+            <h3>Examination</h3>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>Exam Grade</li>
+            </ul>
+        </div>
+        <!-- Breadcrumbs Area End Here -->
+        <div class="row">
+            <!-- Exam Grade Add Area Start Here -->
+
+            <!-- Exam Grade Add Area End Here -->
+            <!-- Exam Grade List Area Start Here -->
+            <div class="col-12-xxxl col-12">
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Transcript Edits</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="mg-b-20">
+                            <div class="row gutters-8">
+                                <div class="col-lg-4 col-sm-4 col-12 form-group">
+                                    <input type="text" placeholder="Search by Reg ..." class="form-control">
+                                </div>
+                                <div class="col-lg-4 col-sm-5 col-12 form-group">
+                                    <input type="text" placeholder="Search by admin password ..." class="form-control">
+                                </div>
+                                <div class="col-lg-4 col-sm-5 col-12 form-group">
+                                    <input type="text" placeholder="Search by level ..." class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-sm-3 col-12 form-group">
+                                    <button type="submit"
+                                        class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <caption>TANSIAN UNIVERSITY</caption>
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Course Code</th>
+                                        <th>Course Title</th>
+                                        <th>Credit</th>
+                                        <th>Grade</th>
+                                        <th>Grade Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- First Semester -->
+                                    <tr>
+                                        <td colspan="5" style="text-align: left; font-weight: bold;">First Semester (100 Level)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="CSC 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="Introduction to Computer Science" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="CSC 112" readonly></td>
+                                        <td><input type="text" class="form-control" value="Computer and Society" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="MAT 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="General Mathematics I" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="PHY 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="General Physics I" readonly></td>
+                                        <td><input type="number" class="form-control" value="3" readonly></td>
+                                        <td><input type="text" class="form-control" value="E"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="STA 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="Statistics & Probability" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="BIO 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="General Biology" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 111" readonly></td>
+                                        <td><input type="text" class="form-control" value="Use of English" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 112" readonly></td>
+                                        <td><input type="text" class="form-control" value="Philosophy & Logic" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 113" readonly></td>
+                                        <td><input type="text" class="form-control" value="Nigeria Legal System" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: right; font-weight: bold;">Total</td>
+                                        <td><input type="number" class="form-control" value="51" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: right; font-weight: bold;">Semester Grade Point Average</td>
+                                        <td><input type="text" class="form-control" value="2.55" readonly></td>
+                                    </tr>
+                        
+                                    <!-- Second Semester -->
+                                    <tr>
+                                        <td colspan="5" style="text-align: left; font-weight: bold;">Second Semester (100 Level)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="CSC 121" readonly></td>
+                                        <td><input type="text" class="form-control" value="Introduction to Computer Programming (Basic)" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="A"></td>
+                                        <td><input type="number" class="form-control" value="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="CSC 122" readonly></td>
+                                        <td><input type="text" class="form-control" value="Introduction to Information Technology" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="B"></td>
+                                        <td><input type="number" class="form-control" value="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="CSC 123" readonly></td>
+                                        <td><input type="text" class="form-control" value="Computer Practical I (Lab)" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="B"></td>
+                                        <td><input type="number" class="form-control" value="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="MAT 121" readonly></td>
+                                        <td><input type="text" class="form-control" value="General Mathematics II" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="B"></td>
+                                        <td><input type="number" class="form-control" value="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="PHY 121" readonly></td>
+                                        <td><input type="text" class="form-control" value="General Physics II" readonly></td>
+                                        <td><input type="number" class="form-control" value="3" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="9"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="PHY 122" readonly></td>
+                                        <td><input type="text" class="form-control" value="Physics Lab (Practical Physics)" readonly></td>
+                                        <td><input type="number" class="form-control" value="1" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 121" readonly></td>
+                                        <td><input type="text" class="form-control" value="Use of English II" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 122" readonly></td>
+                                        <td><input type="text" class="form-control" value="Igbo and Nigerian Peoples & Culture" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="D"></td>
+                                        <td><input type="number" class="form-control" value="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 123" readonly></td>
+                                        <td><input type="text" class="form-control" value="History & Philosophy of Science" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="B"></td>
+                                        <td><input type="number" class="form-control" value="8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" value="GST 120" readonly></td>
+                                        <td><input type="text" class="form-control" value="Philosophy of Life" readonly></td>
+                                        <td><input type="number" class="form-control" value="2" readonly></td>
+                                        <td><input type="text" class="form-control" value="C"></td>
+                                        <td><input type="number" class="form-control" value="6"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: right; font-weight: bold;">Total</td>
+                                        <td><input type="number" class="form-control" value="59" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: right; font-weight: bold;">Semester Grade Point Average</td>
+                                        <td><input type="text" class="form-control" value="2.67" readonly></td>
+                                    </tr>
+
+
+
+                                    
+
+                                </tbody>
+                                
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4" style="text-align: right; font-weight: bold;">Cumulative Grade Point Average</td>
+                                        <td><input type="text" class="form-control" value="2.41" readonly></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Exam Grade List Area End Here -->
+        </div>
+        <!-- All Subjects Area End Here -->
+        <footer class="footer-wrap-layout1">
+            <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by
+                <a href="#">PsdBosS</a></div>
+        </footer>
+    </div>
+{% endblock exam_grade %}

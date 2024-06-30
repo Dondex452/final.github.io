@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% block transcript %}
+<div class="dashboard-content-one">
+    <!-- Breadcubs Area Start Here -->
+    <div class="breadcrumbs-area">
+        <h3>Students</h3>
+        <ul>
+            <li>
+                <a href="{{ url_for('index3') }}">Home</a>
+            </li>
+            <li>Student Transcript</li>
+        </ul>
+    </div>
+    <!-- Breadcubs Area End Here -->
+    <!-- Student Transcript Area Start Here -->
+    <div class="card height-auto">
+        <div class="card-body">
+            <div class="heading-layout1">
+                <div class="item-title">
+                    <h3>Student Transcript</h3>
+                </div>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">...</a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="fas fa-times text-orange-red"></i>Close</a>
+                        <a class="dropdown-item" href="#" id="download-pdf"><i class="fas fa-download text-dark-pastel-green"></i>Download PDF</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Transcript content goes here -->
+            <!-- You can add tables, lists, or any other content to display the transcript -->
+        </div>
+    </div>
+    <!-- Student Transcript Area End Here -->
+    <!-- Download Transcript Area Start Here -->
+    <div class="card height-auto">
+        <div class="card-body">
+            <form id="transcriptForm" action="{{ url_for('handle_download_transcript_student') }}" method="post">
+                <div class="row">
+                    <div class="col-lg-6 col-12 form-group">
+                        <label for="registration-number-download">Registration Number *</label>
+                        <input type="text" id="registration-number-download" class="form-control" name="registration_number" placeholder="Enter Registration Number" required>
+                    </div>
+                    <div class="col-lg-6 col-12 form-group">
+                        <label for="admin-password-download">Admin Password *</label>
+                        <input type="password" id="admin-password-download" class="form-control" name="admin_password" placeholder="Enter Admin Password" required>
+                    </div>
+                    <div class="col-12 form-group">
+                        <button type="submit" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Download</button>
+                        <!-- Add a View button -->
+                        <button type="button" class="btn-fill-lg bg-purple btn-hover-yellow" id="view-transcript">View</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Download Transcript Area End Here -->
+    <!-- Registration Form Area End Here -->
+    <footer class="footer-wrap-layout1">
+        <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a href="#">PsdBosS</a></div>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('view-transcript').addEventListener('click', function() {
+        const registrationNumber = document.getElementById('registration-number-download').value;
+        const adminPassword = document.getElementById('admin-password-download').value;
+
+        // Perform AJAX request to fetch and display the transcript preview
+        fetch('{{ url_for("handle_download_transcript_student") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                registration_number: registrationNumber,
+                admin_password: adminPassword
+            })
+        })
+        .then(response => response.blob())
+        .then(blob => {
+            const fileType = getFileType(blob.type);
+
+            if (fileType === 'pdf') {
+                const fileURL = URL.createObjectURL(blob);
+                window.open(fileURL);
+            } else if (fileType === 'docx' || fileType === 'doc') {
+                const fileURL = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(URL.createObjectURL(blob))}`;
+                window.open(fileURL, '_blank');
+            } else if (fileType === 'xlsx' || fileType === 'xls') {
+                const fileURL = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(URL.createObjectURL(blob))}`;
+                window.open(fileURL, '_blank');
+            } else {
+                alert('Preview not available for this file type.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching transcript:', error);
+            alert('Failed to fetch transcript. Please try again later.');
+        });
+    });
+
+    function getFileType(mimeType) {
+        const types = {
+            'application/pdf': 'pdf',
+            'application/msword': 'doc',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
+            'application/vnd.ms-excel': 'xls',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx'
+        };
+
+        return types[mimeType] || '';
+    }
+</script>
+
+{% endblock transcript %}

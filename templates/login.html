@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AKKHOR | Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.png')}}">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/all.min.css')}}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/flaticon.css')}}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate.min.css')}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Modernize js -->
+    <script src="{{url_for('static', filename='js/modernizr-3.6.0.min.js')}}"></script>
+    
+</head>
+
+<body>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+    <!-- Login Page Start Here -->
+    <div class="login-page-wrap">
+        <div class="login-page-content">
+            <div class="login-box">
+                <div class="item-logo">
+                    <img src="{{url_for('static', filename='img/logo2.png')}}" alt="logo">
+                </div>
+               
+                <form id="loginForm" class="login-form" method="POST" action="{{ url_for('login') }}">
+                    <div class="form-group">
+                        <label for="type" class="pl-1 control-label bold">Who are you?</label>
+                        <select class="form-control custom-select" id="type" required>
+                            <option value="">Select an option</option>
+                            <option value="staff">I am a staff</option>
+                            <option value="student">I am a student</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="pl-1 control-label bold">Username / Reg. Number</label>
+                        <input class="form-control" id="username" name="username" type="text"	placeholder="Enter username or reg. number" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="pl-1 bold">Password</label>
+                        <div class="input-group">
+                            <input class="form-control" id="password" name="password" type="password" placeholder="Enter password"
+                                required />
+                            <div class="input-group-append">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="utility">
+                            <div class="animated-checkbox float-left d-none">
+                                <label>
+                                    <input type="checkbox" id="staychbx"><span class="label-text">Stay Signed in</span>
+                                </label>
+                            </div>
+                            <p class="mb-2 float-right" style="color:#343a40 !important;"><a href="#" data-toggle="flip">Forgot Password?</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p>
+                        <button type="submit" id="loginbtn" class="btn btn-blue w-100 mt-2"><i
+                                class="fa fa-sign-in"></i> Log In</button>
+                    </p>
+                    <p class="mb-2 text-center" style="color:#343a40 !important;">Don't have an account? <a href="{{url_for('sign_up')}}"
+                        data-toggle="flip">Sign Up</a></p>
+                </form>
+                <div class="login-social">
+                    <p>or sign in with</p>
+                    <ul>
+                        <li><a href="#" class="bg-fb"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="bg-twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="bg-gplus"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#" class="bg-git"><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sign-up">Don't have an account ? <a href="{{url_for('sign_up')}}">Signup now!</a></div>
+        </div>
+    </div>
+    <!-- Login Page End Here -->
+    <!-- jquery-->
+    <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+    <!-- Plugins js -->
+    <script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+    <!-- Popper js -->
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <!-- Bootstrap js -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <!-- Scroll Up Js -->
+    <script src="{{url_for('static', filename='js/jquery.scrollUp.min.js')}}"></script>
+    <!-- Custom Js -->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script src="{{url_for('static', filename='js/login.js')}}"></script>
+    <script src="{{url_for('static', filename='js/edit.js')}}"></script>
+
+    
+    <!--Start of Conferbot Script-->
+    <script type="text/javascript">
+        (function (d, s, id) {
+          var js, el = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.async = true;
+          js.src = 'https://s3.ap-south-1.amazonaws.com/conferbot.defaults/dist/v1/widget.min.js';
+          js.id = id;
+          js.charset = 'UTF-8';
+          el.parentNode.insertBefore(js, el);
+          js.onload = function () {
+            var w = window.ConferbotWidget("666564a23f89ee9c354068bd", "live_chat");
+          };
+        })(document, 'script', 'conferbot-js');
+      </script>
+      <!--End of Conferbot Script-->
+    
+    
+    
+    
+
+</body>
+
+</html>

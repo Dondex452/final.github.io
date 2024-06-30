@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AKKHOR | Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.png')}}">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/all.min.css')}}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/flaticon.css')}}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/animate.min.css')}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Modernize js -->
+    <script src="{{url_for('static', filename='js/modernizr-3.6.0.min.js')}}"></script>
+</head>
+<body>
+    <div class="container-fluid fixed-top login-body signup-bg">
+        <div class="row">
+            <div class="col-12 form-block">
+                <p class="text-center mt-4"><img src="{{url_for('static', filename='img/logo2.png')}}" class="img-fluid" style="max-width:100px;" alt="University Logo" /></p>
+                <div class="row mt-3 mb-4 p-sm-0 p-2">
+                    <div class="offset-lg-1 col-lg-10 offset-sm-1 col-sm-10 bg-white text-dark p-3 px-sm-4">
+                        <h4 class="text-center text-blue">Student Sign Up</h4>
+                        <p class="mb-2 text-center" style="color:#343a40 !important;">Already have an account? <a href="{{url_for('login')}}" data-toggle="flip">Log In</a></p>
+                        <hr class="w-75 mr-auto ml-auto" />
+                        <form class="text-dark" method="POST" action="{{ url_for('sign_up') }}">
+                            <h5 style="font-size:16px;" class="bold">Personal Data</h5>
+                            <hr class="mt-1 mb-4" />
+                            <div class="row">
+                                <div class="col-sm-4 order-sm-2">
+                                    <div class="form-group">
+                                        <label class="pl-1 control-label bold">Upload Passport Photo</label>
+                                        <input class="d-none" id="file" type="file" required />
+                                        <div class="card" style="max-width:200px;">
+                                            <div class="card-body p-0">
+                                                <img src="{{url_for('static', filename='/img/avatar.png')}}" id="previmg" class="img-fluid" alt="passport photo" />
+                                            </div>
+                                            <div class="card-footer m-0 p-0">
+                                                <div class="input-group rounded-0">
+                                                    <input class="form-control form-control-sm py-0 rounded-0" readonly id="ftxt" type="text" placeholder="Select an image file" />
+                                                    <div class="input-group-append">
+                                                        <label for="file" class="btn btn-blue btn-sm font-weight-normal remove-btn-shadow m-0 rounded-0"><i class="fa fa-folder-open"></i></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 order-sm-1">
+                                    <div class="row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="surname" class="pl-1 control-label bold">Surname</label>
+                                            <input class="form-control" id="surname" name="surname" type="text" placeholder="Enter Surname" required />
+                                        </div>
+                                        
+                                        <div class="form-group col-sm-6">
+                                            <label for="username" class="pl-1 control-label bold">Username</label>
+                                            <input class="form-control" id="username" name="username" type="text" placeholder="Enter Username" required />
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="first_name" class="pl-1 control-label bold">First Name</label>
+                                            <input class="form-control" id="first_name" name="first_name" type="text" placeholder="Enter first name" required />
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="other_name" class="pl-1 control-label bold">Other Name</label>
+                                            <input class="form-control" id="other_name" name="other_name" type="text" placeholder="Enter other name" required />
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="faculty" class="pl-1 control-label bold">Faculty</label>
+                                            <select id="faculty" name="faculty" class="form-control custom-select chosen-select" required>
+                                                <option value="">Select faculty</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Environmental Sciences">Environmental Sciences</option>
+                                                <option value="Health Sciences">Health Sciences</option>
+                                                <option value="Law">Law</option>
+                                                <option value="Management and Social Sciences">Management and Social Sciences</option>
+                                                <option value="Natural and Applied Sciences">Natural and Applied Sciences</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="phone_number" class="pl-1 control-label bold">Phone Number</label>
+                                            <input class="form-control" id="phone_number" name="phone_number" type="phone" placeholder="Enter phone number 1"
+                                                required />
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="password" class="pl-1 bold">Password</label>
+                                            <div class="input-group">
+                                                <input class="form-control" id="password" name="password" type="password"
+                                                    placeholder="Enter password" required />
+                                                <div class="input-group-append">
+                                                   </div>
+                                            </div>
+                                        </div>
+                                        <!-- Department and other fields continue here -->
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <!-- Parent/Guardian fields continue here -->
+                            <p class="text-center">
+                                <button type="submit" id="sbtn" class="btn btn-blue mt-2 px-5 font-weight-normal"><i class="fa fa-check-circle"></i> Submit</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+<!-- Plugins js -->
+<script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+<!-- Popper js -->
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<!-- Bootstrap js -->
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<!-- Scroll Up Js -->
+<script src="{{url_for('static', filename='js/jquery.scrollUp.min.js')}}"></script>
+<!-- Custom Js -->
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+<script src="{{url_for('static', filename='js/edit.js')}}"></script>
